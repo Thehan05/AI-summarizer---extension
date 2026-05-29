@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    width: 300px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#summary {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+#loading {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #888;
+}
