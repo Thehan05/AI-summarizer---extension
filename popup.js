@@ -34,20 +34,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     const API_KEY = '';
                     const API_URL = 'https://api.groq.com/openai/v1/chat/completions';
 
-                    const response = await fetch(API_URL, {
+                    const response = await fetch('https://tldr-proxy.tldr-theha.workers.dev', {
                         method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Authorization': 'Bearer ' + API_KEY
-                        },
-                        body: JSON.stringify({
-                            model: 'llama-3.3-70b-versatile',
-                            messages: [{
-                                role: 'user',
-                                content: 'Summarize this text in a few bullet points:\n\n' + textToSummarize
-                            }]
-                        })
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ text: textToSummarize })
                     });
+
 
                     const data = await response.json();
                     console.log(data);
