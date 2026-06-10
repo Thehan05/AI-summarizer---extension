@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "TL;DR Extension",
+    "name": "AI Summarizer",
     "version": "1.0",
-    "description": "Summarize articles and web pages with TL;DR Extension.",
+    "description": "Summarize articles and web pages with AI Summarizer.",
     "permissions": [
         "activeTab",
         "scripting"
