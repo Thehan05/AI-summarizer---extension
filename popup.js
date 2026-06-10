@@ -34,16 +34,41 @@ document.addEventListener('DOMContentLoaded', function() {
                     const API_KEY = '';
                     const API_URL = 'https://api.groq.com/openai/v1/chat/completions';
 
+                    const formatSelect = document.getElementById('formatSelect');
+                    const format = formatSelect ? formatSelect.value : 'brief';
+
                     const response = await fetch('https://tldr-proxy.tldr-theha.workers.dev', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ text: textToSummarize })
+                        body: JSON.stringify({ text: textToSummarize, format: format })
                     });
 
 
                     const data = await response.json();
                     console.log(data);
-                    summaryResult.textContent = data.choices[0].message.content;
+                    const rawText = data.choices[0].message.content;
+
+                    // Split into lines, keep only bullet lines, strip the "* " prefix
+                    const bullets = rawText
+                        .split('\n')
+                        .filter(line => line.trim().startsWith('*') || line.trim().startsWith('-'))
+                        .map(line => line.replace(/^[\s*\-]+/, '').trim())
+                        .filter(line => line.length > 0);
+
+                    // Build a real <ul> with <li>s so CSS can style them
+                    summaryResult.innerHTML = '';
+                    if (bullets.length > 0) {
+                        const ul = document.createElement('ul');
+                        bullets.forEach(text => {
+                            const li = document.createElement('li');
+                            li.textContent = text;
+                            ul.appendChild(li);
+                        });
+                        summaryResult.appendChild(ul);
+                    } else {
+                        // Fallback if the AI didn't return bullets
+                        summaryResult.textContent = rawText;
+                    }
                 } catch (error) {
                     summaryResult.textContent = 'Error: ' + error.message;
                 }

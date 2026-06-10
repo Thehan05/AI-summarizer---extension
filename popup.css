@@ -1,7 +1,16 @@
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
-    width: 300px;
+    width: 340px;
+    background: #0f0a1e;     
+    color: #e5e5e5;  
+}
+.card {
+  background: #1a1530;     
+  border: 1px solid #2a2540;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
 }
 
 button {
@@ -10,14 +19,128 @@ button {
     cursor: pointer;
 }
 
-#summary {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #333;
+#summaryResult {
+  color: #e5e5e5;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+#summaryResult ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+#summaryResult li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+#summaryResult li::marker {
+  color: #a78bfa;
 }
 
 #loading {
     margin-top: 20px;
     font-size: 14px;
     color: #888;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #a78bfa, #7c3aed);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.8;
+}
+
+.skeleton {
+  height: 8px;
+  background: #2a2540;
+  border-radius: 4px;
+  margin: 6px 0;
+}
+.skeleton:nth-child(2) { width: 80%; }
+.skeleton:nth-child(3) { width: 60%; }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.label {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #999;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #999;
+}
+.square {
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(135deg, #a78bfa, #7c3aed);
+  border-radius: 4px;
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #a78bfa, #7c3aed);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title span {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+footer {
+  text-align: center;
+  font-size: 11px;
+  color: #555;
+  margin-top: 16px;
+}
+
+select {
+  background: #1a1530;
+  color: #e5e5e5;
+  border: 1px solid #2a2540;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 12px;
 }

@@ -1,13 +1,33 @@
 <html>  
+    <meta charset="UTF-8">
 <head>
     <title>Popup</title>
     <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-    <h1>TL;DR Extension</h1>
-    <button id="summarizeButton">Click me</button>
-    <div id="summaryResult"></div>
-    <div id="loading" hidden>Summarizing...</div>
+    <header>    
+        <div class="title">
+            <div class="logo">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                <path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z"/>
+            </svg>
+            </div>
+            <span>AI SUMMARIZER</span>
+        </div>
+        <select id="formatSelect">
+            <option value="brief">Brief</option>
+            <option value="detailed">Detailed</option>
+        </select>
+    </header>
+
+
+    <div class="card" id="summaryResult">
+        Summarize the current page instantly...
+        <div id="loading" hidden>Summarizing...</div>
+    </div>
+
+    <button id="summarizeButton">✦ Summarize</button>
+     <footer>Powered by Groq</footer>
 </body>
 <script src="popup.js"></script>
 </html>
