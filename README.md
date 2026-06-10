@@ -1,4 +1,4 @@
-# TL;DR Extension
+# AI SUMMARIZER
 
 A Chrome extension that summarizes any web page or selected text in a single click, powered by an LLM.
 
@@ -27,7 +27,7 @@ A Chrome extension that summarizes any web page or selected text in a single cli
 - Cloudflare Workers (proxy)
 - Groq API (LLM)
 
-## Installation (for development)
+## Installation
 
 1. Clone the repo:
    ```
@@ -64,3 +64,17 @@ tl-dr-extension/
 └── icons/            # extension icons
 ```
 
+## Screenshots
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="screenshots/UI.png" width="300" alt="UI" /><br/>
+      <em>UI — user can pick Brief or Detailed, then hit Summarize.</em>
+    </td>
+    <td align="center">
+      <img src="screenshots/summary.png" width="300" alt="Summary page" /><br/>
+      <em>Summary Result — the page is condensed into clean bullet points.</em>
+    </td>
+  </tr>
+</table>
